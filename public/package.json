@@ -4,7 +4,9 @@
   "description": "This is the demo project for the Upgrading AngularJS course.",
   "main": "app.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --bail --progress",
+    "dev": "webpack-dev-server",
+    "start:dev": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sam Julien",
@@ -22,6 +24,7 @@
     "ts-loader": "^4.3.0",
     "typescript": "^2.8.3",
     "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3"
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
   }
 }

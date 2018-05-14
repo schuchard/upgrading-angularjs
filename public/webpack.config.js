@@ -11,6 +11,11 @@ module.exports = {
     rules: [{ test: /\.ts?$/, use: 'ts-loader', exclude: '/node_modules/' }],
   },
   resolve: {
-    extensions: ['.ts', '.js']
-  }
+    extensions: ['.ts', '.js'],
+  },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './',
+    port: 9000,
+  },
 };
