@@ -1,5 +1,10 @@
-angular.module('app', ['ngRoute']);
+import homeComponent from './home/home';
 
-angular.module('app').config(['$locationProvider', function($locationProvider) {
+angular.module('app', ['ngRoute']).component('homeComponent', homeComponent);
+
+angular.module('app').config([
+  '$locationProvider',
+  function($locationProvider) {
     $locationProvider.hashPrefix('');
-  }]);
+  },
+]);

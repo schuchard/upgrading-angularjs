@@ -4,6 +4,7 @@
   "description": "This is the demo project for the Upgrading AngularJS course.",
   "main": "app.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sam Julien",
@@ -15,5 +16,9 @@
     "moment": "~2.17.1",
     "bootstrap": "3.3.7",
     "lodash": "4.17.4"
+  },
+  "devDependencies": {
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
   }
 }
