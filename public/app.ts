@@ -1,3 +1,5 @@
+import * as angular from "angular";
+
 import homeComponent from './home/home';
 
 angular.module('app', ['ngRoute']).component('homeComponent', homeComponent);
