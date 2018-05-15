@@ -7,6 +7,8 @@ import { RouteProvider } from './config.routes';
 import { CustomerService } from './customers/customerService';
 import { AddressService } from './shared/addressService';
 import { ProductService } from './products/productService';
+import { AuthenticationService } from './shared/authenticationService';
+import { OrderService } from './orders/orderService';
 
 import { HomeComponent } from './home/home';
 import { CustomersComponent } from './customers/customers';
@@ -26,6 +28,8 @@ angular
   .service('customerService', CustomerService)
   .service('addressService', AddressService)
   .service('productService', ProductService)
+  .service('authenticationService', AuthenticationService)
+  .service('orderService', OrderService)
   .component('home', HomeComponent)
   .component('customers', CustomersComponent)
   .component('customerDetail', CustomerDetailComponent)
