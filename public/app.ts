@@ -20,6 +20,7 @@ import { OrdersComponent } from './orders/orders';
 import { OrderDetailComponent } from './orderDetail/orderDetail';
 import { ProductsComponent } from './products/products';
 import { ProductDetailComponent } from './productDetail/productDetail';
+import { ValidateDateDirective } from './directives/validateDate';
 
 angular
   .module('app', ['ngRoute'])
@@ -39,4 +40,5 @@ angular
   .component('orders', OrdersComponent)
   .component('orderDetail', OrderDetailComponent)
   .component('products', ProductsComponent)
-  .component('productDetail', ProductDetailComponent);
+  .component('productDetail', ProductDetailComponent)
+  .directive('validateDate', ValidateDateDirective);
