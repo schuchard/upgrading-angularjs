@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home';
 import { CustomersComponent } from './customers/customers';
 import { CustomerDetailComponent } from './customerDetail/customerDetail';
 import { NavigationComponent } from './navigation/navigation';
+import { CustomersTableComponent } from './customers/customers-table';
 
 angular
   .module('app', ['ngRoute'])
@@ -21,4 +22,5 @@ angular
   .component('home', HomeComponent)
   .component('customers', CustomersComponent)
   .component('customerDetail', CustomerDetailComponent)
-  .component('navigation', NavigationComponent);
+  .component('navigation', NavigationComponent)
+  .component('customersTable', CustomersTableComponent);
