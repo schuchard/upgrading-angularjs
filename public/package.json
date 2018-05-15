@@ -4,8 +4,9 @@
   "description": "This is the demo project for the Upgrading AngularJS course.",
   "main": "app.js",
   "scripts": {
-    "build": "webpack --bail --progress --env.env=dev",
-    "build:prod": "webpack --bail --progress --env.env=prod",
+    "clean": "del-cli -f ../dist",
+    "build": "npm run clean && webpack --bail --progress --env.env=dev",
+    "build:prod": "npm run clean && webpack --bail --progress --env.env=prod",
     "dev": "webpack-dev-server --env.env=dev",
     "start:dev": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +26,7 @@
     "@types/angular": "^1.6.45",
     "@types/node": "^10.0.10",
     "css-loader": "^0.28.11",
+    "del-cli": "^1.1.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "raw-loader": "^0.5.1",
