@@ -1,5 +1,9 @@
 import * as angular from 'angular';
+
 import 'angular-route';
+import 'jquery';
+import 'lodash';
+import 'moment';
 
 import { HashPrefixConfig } from './config.hashprefix';
 import { RouteProvider } from './config.routes';
