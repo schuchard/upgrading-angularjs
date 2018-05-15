@@ -1,5 +1,5 @@
 export const DiscountComponent = {
-  templateUrl: './customerDetail/discount.html',
+  template: require('./discount.html'),
   bindings: {
     customerDiscount: '<',
     update: '&',

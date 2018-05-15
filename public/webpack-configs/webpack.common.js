@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -19,9 +20,18 @@ module.exports = {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
         use: 'file-loader',
       },
+      {
+        test: /\.html?$/,
+        use: 'raw-loader'
+      }
     ],
   },
   resolve: {
     extensions: ['.ts', '.js'],
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ]
 };

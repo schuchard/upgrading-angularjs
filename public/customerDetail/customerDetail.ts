@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 
 export const CustomerDetailComponent = {
-  templateUrl: './customerDetail/customerDetail.html',
+  template: require('./customerDetail.html'),
   bindings: {
     customer: '<',
   },

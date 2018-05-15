@@ -1,5 +1,5 @@
 export const CustomersComponent = {
-  templateUrl: './customers/customers.html',
+  template: require('./customers.html'),
   bindings: {},
   controller: customersComponentController,
 };

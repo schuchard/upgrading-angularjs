@@ -1,5 +1,5 @@
 export const HomeComponent = {
-  templateUrl: './home/home.html',
+  template: require('./home.html'),
   bindings: {},
   controller: homeComponentController,
 };
