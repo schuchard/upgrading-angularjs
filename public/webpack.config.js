@@ -6,5 +6,7 @@ module.exports = (env) => {
   console.log(`\nrunning ${env.env} environment\n`);
   const envConfig = require(`./webpack-configs/webpack.${env.env}.js`);
 
+  // console.log('envConfig ->', JSON.stringify(envConfig, null,2));
+
   return webpackMerge(commonConfig, envConfig);
 };
