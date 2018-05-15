@@ -1,5 +1,5 @@
 export const ProductDetailComponent = {
-  templateUrl: './productDetail/productDetail.html',
+  template: require('./productDetail.html'),
   bindings: {
     product: '<',
   },

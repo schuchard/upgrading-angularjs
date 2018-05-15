@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 
 export const OrdersComponent = {
-  templateUrl: './orders/orders.html',
+  template: require('./orders.html'),
   bindings: {},
   controller: ordersComponentController,
 };
