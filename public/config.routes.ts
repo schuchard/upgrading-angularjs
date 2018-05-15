@@ -1,7 +1,7 @@
 // .config(['$routeProvider', ]);
-routeProvider.$inject = ['$routeProvider'];
+RouteProvider.$inject = ['$routeProvider'];
 
-export default function routeProvider($routeProvider) {
+export function RouteProvider($routeProvider) {
   $routeProvider
     .when('/', {
       template: '<home></home>',

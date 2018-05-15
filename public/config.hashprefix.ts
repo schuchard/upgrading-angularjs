@@ -1,5 +1,5 @@
-hashPrefixConfig.$inject = ['$locationProvider'];
+HashPrefixConfig.$inject = ['$locationProvider'];
 
-export default function hashPrefixConfig($locationProvider) {
+export function HashPrefixConfig($locationProvider) {
   $locationProvider.hashPrefix('');
 }

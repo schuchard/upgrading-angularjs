@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-export default {
+export const CustomerDetailComponent = {
   templateUrl: './customerDetail/customerDetail.html',
   bindings: {
     customer: '<',

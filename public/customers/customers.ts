@@ -1,4 +1,4 @@
-export default {
+export const CustomersComponent = {
   templateUrl: './customers/customers.html',
   bindings: {},
   controller: customersComponentController,

@@ -1,23 +1,24 @@
 import * as angular from 'angular';
 import 'angular-route';
 
-import hashPrefixConfig from './config.hashprefix';
-import routeProvider from './config.routes';
+import { HashPrefixConfig} from './config.hashprefix';
+import { RouteProvider} from './config.routes';
 
-import CustomerService from './customers/customerService';
-import AddressService from './shared/addressService';
+import { CustomerService} from './customers/customerService';
+import { AddressService } from './shared/addressService';
 
-import homeComponent from './home/home';
-import customersComponent from './customers/customers';
-import customerDetailComponent from './customerDetail/customerDetail';
-
+import { HomeComponent } from './home/home';
+import { CustomersComponent } from './customers/customers';
+import { CustomerDetailComponent } from './customerDetail/customerDetail';
+import { NavigationComponent } from './navigation/navigation';
 
 angular
   .module('app', ['ngRoute'])
-  .config(hashPrefixConfig)
-  .config(routeProvider)
+  .config(HashPrefixConfig)
+  .config(RouteProvider)
   .service('customerService', CustomerService)
   .service('addressService', AddressService)
-  .component('home', homeComponent)
-  .component('customers', customersComponent)
-  .component('customerDetail', customerDetailComponent);
+  .component('home', HomeComponent)
+  .component('customers', CustomersComponent)
+  .component('customerDetail', CustomerDetailComponent)
+  .component('navigation', NavigationComponent);

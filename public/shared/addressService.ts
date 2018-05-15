@@ -1,4 +1,4 @@
-export default class AddressService {
+export class AddressService {
   constructor() { }
 
   getFullAddress(customer) {
