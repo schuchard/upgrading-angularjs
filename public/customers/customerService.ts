@@ -1,4 +1,4 @@
-export class CustomerService {
+export default class CustomerService {
   constructor(private $http) {}
 
   getCustomers() {
