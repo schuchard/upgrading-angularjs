@@ -6,6 +6,7 @@ import 'lodash';
 import 'moment';
 
 import './styles/app.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { HashPrefixConfig } from './config.hashprefix';
 import { RouteProvider } from './config.routes';
