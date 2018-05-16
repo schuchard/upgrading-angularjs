@@ -1,11 +1,12 @@
-import * as _ from 'lodash';
+import { Component, OnInit, Inject } from '@angular/core';
+import { downgradeComponent } from '@angular/upgrade/static';
+
 import { Observable, from, forkJoin } from 'rxjs';
+import * as _ from 'lodash';
+
+import { MODULE_NAME } from '../app.module.ajs';
 import { OrderService } from './orderService';
 import { CustomerService } from '../customers/customer.service';
-import { Component, OnInit } from '@angular/core';
-import { MODULE_NAME } from '../app.module.ajs';
-import { downgradeComponent } from '@angular/upgrade/static';
-import { IAngularBootstrapConfig } from '@angular/upgrade/static/src/common/angular1';
 
 declare var angular: angular.IAngularStatic;
 
@@ -20,7 +21,8 @@ export class OrdersComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private customerService: CustomerService
+    private customerService: CustomerService,
+    @Inject('$location') private $location
   ) {}
 
   ngOnInit() {
@@ -41,8 +43,6 @@ export class OrdersComponent implements OnInit {
   }
 }
 
-angular
-  .module(MODULE_NAME)
-  .directive('orders', downgradeComponent({
-    component: OrdersComponent,
-  }) as angular.IDirectiveFactory);
+angular.module(MODULE_NAME).directive('orders', downgradeComponent({
+  component: OrdersComponent,
+}) as angular.IDirectiveFactory);

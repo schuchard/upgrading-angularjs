@@ -13,10 +13,11 @@ import { AddressService } from './shared/addressService';
 import { CustomersTableComponent } from './customers/customers-table.component';
 import { CustomersComponent } from './customers/customers.component';
 import { OrdersComponent } from './orders/orders.component';
+import { LocationServiceProvider } from './ajs.upgradedproviders';
 
 @NgModule({
   imports: [BrowserModule, UpgradeModule, HttpModule],
-  providers: [CustomerService, OrderService, AddressService],
+  providers: [CustomerService, OrderService, AddressService, LocationServiceProvider],
   bootstrap: [],
   declarations: [
     HomeComponent,
