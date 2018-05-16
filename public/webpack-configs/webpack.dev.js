@@ -5,7 +5,7 @@ module.exports = {
     contentBase: './src',
     port: 9000,
     proxy: {
-      '/api': 'localhost:9001',
+      '/api': 'http://localhost:9001',
     },
   },
   module: {
