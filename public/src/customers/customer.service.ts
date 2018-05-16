@@ -3,6 +3,9 @@ import { Http, Response } from '@angular/http';
 import { downgradeInjectable } from '@angular/upgrade/static';
 
 import { MODULE_NAME } from '../app.module.ajs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 declare var angular: angular.IAngularStatic;
 
 @Injectable()
@@ -10,11 +13,10 @@ export class CustomerService {
   customersRoot = '/api/customers';
   constructor(private http: Http) {}
 
-  getCustomers(): Promise<any> {
+  getCustomers(): Observable<any> {
     return this.http
       .get(`${this.customersRoot}`)
-      .toPromise()
-      .then((res: Response) => res.json());
+      .pipe(map((res: Response) => res.json()));
   }
 
   getCustomer(id): Promise<any> {

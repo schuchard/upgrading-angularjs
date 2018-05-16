@@ -10,10 +10,8 @@ import './styles/index';
 import { HashPrefixConfig } from './config.hashprefix';
 import { RouteProvider } from './config.routes';
 
-import { AddressService } from './shared/addressService';
 import { ProductService } from './products/productService';
 import { AuthenticationService } from './shared/authenticationService';
-import { OrderService } from './orders/orderService';
 
 import { CustomersComponent } from './customers/customers';
 import { CustomerDetailComponent } from './customerDetail/customerDetail';
@@ -32,10 +30,8 @@ angular
   .module(MODULE_NAME, ['ngRoute'])
   .config(HashPrefixConfig)
   .config(RouteProvider)
-  .service('addressService', AddressService)
   .service('productService', ProductService)
   .service('authenticationService', AuthenticationService)
-  .service('orderService', OrderService)
   .component('customers', CustomersComponent)
   .component('customerDetail', CustomerDetailComponent)
   .component('navigation', NavigationComponent)

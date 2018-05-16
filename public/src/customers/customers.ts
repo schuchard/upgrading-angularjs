@@ -1,3 +1,5 @@
+import { CustomerService } from './customer.service';
+
 export const CustomersComponent = {
   template: require('./customers.html'),
   bindings: {},
@@ -5,11 +7,11 @@ export const CustomersComponent = {
 };
 
 customersComponentController.$inject = ['customerService'];
-function customersComponentController(customerService) {
+function customersComponentController(customerService: CustomerService) {
   var vm = this;
   vm.title = 'Customers';
 
   vm.$onInit = () => {
-    customerService.getCustomers().then((res) => (vm.customers = res));
+    customerService.getCustomers().subscribe((res) => (vm.customers = res));
   };
 }

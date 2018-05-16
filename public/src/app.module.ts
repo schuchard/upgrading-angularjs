@@ -8,11 +8,13 @@ import { MODULE_NAME } from './app.module.ajs';
 import { HomeComponent } from './home/home.component';
 
 import { CustomerService } from './customers/customer.service';
+import { OrderService } from './orders/orderService';
+import { AddressService } from './shared/addressService';
 
 @NgModule({
   imports: [BrowserModule, UpgradeModule, HttpModule],
   declarations: [HomeComponent],
-  providers: [CustomerService],
+  providers: [CustomerService, OrderService, AddressService],
   bootstrap: [],
   // all downgraded components must be added to entry components
   entryComponents: [HomeComponent],

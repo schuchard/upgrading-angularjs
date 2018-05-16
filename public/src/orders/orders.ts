@@ -1,4 +1,7 @@
-import * as _ from "lodash";
+import * as _ from 'lodash';
+import { Observable, from, forkJoin } from 'rxjs';
+import { OrderService } from './orderService';
+import { CustomerService } from '../customers/customer.service';
 
 export const OrdersComponent = {
   template: require('./orders.html'),
@@ -7,18 +10,27 @@ export const OrdersComponent = {
 };
 
 ordersComponentController.$inject = ['orderService', 'customerService'];
-function ordersComponentController(orderService, customerService) {
+function ordersComponentController(
+  orderService: OrderService,
+  customerService: CustomerService
+) {
   var vm = this;
   vm.title = 'Orders';
 
-  vm.$onInit = function() {
-    vm.customers = customerService.getCustomers();
-    vm.orders = orderService.getOrders();
-    vm.orders.forEach(function(order) {
-      var customer = _.find(vm.customers, function(customer) {
-        return order.customerId === customer.id;
+  vm.$onInit = () => {
+    forkJoin(
+      from(orderService.getOrders()), // promise
+      customerService.getCustomers() // observable stream
+    ).subscribe((res) => {
+      [vm.orders, vm.customers] = res;
+
+      vm.orders.forEach((order) => {
+        const customer = _.find(
+          vm.customers,
+          (customer) => order.customerId === customer.id
+        );
+        order.customerName = customer.fullName;
       });
-      order.customerName = customer.fullName;
     });
   };
 }

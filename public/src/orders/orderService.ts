@@ -1,92 +1,47 @@
-import * as _ from 'lodash';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { downgradeInjectable } from '@angular/upgrade/static';
 
+import { MODULE_NAME } from '../app.module.ajs';
+
+declare var angular: angular.IAngularStatic;
+
+@Injectable()
 export class OrderService {
-  constructor(private $http) {}
+  apiRoot = '/api/orders';
+  customersRoot = '/api/customers';
 
-  getOrders() {
-    return this.orders();
+  constructor(private http: Http) {}
+
+  getOrders(): Promise<any> {
+    return this.http
+      .get(`${this.apiRoot}`)
+      .toPromise()
+      .then((res: Response) => res.json());
   }
 
-  getOrder(id) {
-    return _.find(this.orders(), (o) => o.id === id);
+  getOrder(id): Promise<any> {
+    return this.http
+      .get(`${this.apiRoot}/${id}`)
+      .toPromise()
+      .then((res: Response) => res.json());
   }
 
-  getOrdersByCustomer(customerId) {
-    return this.orders().filter((o) => o.customerId === customerId);
+  getOrdersByCustomer(customerId): Promise<any> {
+    return this.http
+      .get(`${this.customersRoot}/${customerId}/orders`)
+      .toPromise()
+      .then((res: Response) => res.json());
   }
 
-  postOrder(order) {
-    return this.$http.post('/api/orders', order).then((data) => data);
-  }
-
-  private orders() {
-    return [
-      {
-        id: 1,
-        orderDate: '2017-06-25T00:30:43.16-07:00',
-        customerId: 2,
-        totalCost: 15.0,
-        totalSale: 15.0,
-        totalItems: 3,
-        items: [
-          {
-            quantity: 2,
-            productId: 1,
-          },
-          {
-            quantity: 1,
-            productId: 4,
-          },
-        ],
-      },
-      {
-        id: 2,
-        orderDate: '2017-06-29T00:30:43.16-07:00',
-        customerId: 1,
-        totalCost: 10,
-        totalSale: 9,
-        totalItems: 4,
-        items: [
-          {
-            quantity: 2,
-            productId: 2,
-          },
-          {
-            quantity: 2,
-            productId: 3,
-          },
-        ],
-      },
-      {
-        id: 3,
-        orderDate: '2017-07-04T00:30:43.16-07:00',
-        customerId: 3,
-        totalCost: 5,
-        totalSale: 4.75,
-        totalItems: 2,
-        items: [
-          {
-            quantity: 2,
-            productId: 1,
-          },
-        ],
-      },
-      {
-        id: 4,
-        orderDate: '2017-08-04T00:30:43.16-07:00',
-        customerId: 2,
-        totalCost: 25,
-        totalSale: 25,
-        totalItems: 10,
-        items: [
-          {
-            quantity: 10,
-            productId: 2,
-          },
-        ],
-      },
-    ];
+  postOrder(order): Promise<any> {
+    return this.http
+      .post(`${this.apiRoot}`, order)
+      .toPromise()
+      .then((res: Response) => res.json());
   }
 }
 
-OrderService.$inject = ['$http'];
+angular
+  .module(MODULE_NAME)
+  .factory('orderService', downgradeInjectable(OrderService));

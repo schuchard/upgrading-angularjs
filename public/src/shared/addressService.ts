@@ -1,5 +1,12 @@
+import { Injectable } from '@angular/core';
+import { MODULE_NAME } from '../app.module.ajs';
+import { downgradeInjectable } from '@angular/upgrade/static';
+
+declare var angular: angular.IAngularStatic;
+
+@Injectable()
 export class AddressService {
-  constructor() { }
+  constructor() {}
 
   getFullAddress(customer) {
     return (
@@ -13,3 +20,7 @@ export class AddressService {
     );
   }
 }
+
+angular
+  .module(MODULE_NAME)
+  .factory('addressService', downgradeInjectable(AddressService));
