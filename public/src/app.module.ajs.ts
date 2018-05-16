@@ -16,7 +16,6 @@ import { AuthenticationService } from './shared/authenticationService';
 import { CustomerDetailComponent } from './customerDetail/customerDetail';
 import { NavigationComponent } from './navigation/navigation';
 import { DiscountComponent } from './customerDetail/discount';
-import { OrdersComponent } from './orders/orders';
 import { OrderDetailComponent } from './orderDetail/orderDetail';
 import { ProductsComponent } from './products/products';
 import { ProductDetailComponent } from './productDetail/productDetail';
@@ -33,7 +32,6 @@ angular
   .component('customerDetail', CustomerDetailComponent)
   .component('navigation', NavigationComponent)
   .component('discount', DiscountComponent)
-  .component('orders', OrdersComponent)
   .component('orderDetail', OrderDetailComponent)
   .component('products', ProductsComponent)
   .component('productDetail', ProductDetailComponent)

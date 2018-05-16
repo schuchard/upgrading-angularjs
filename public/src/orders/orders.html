@@ -1,21 +1,23 @@
 <div class="row">
-    <h1>{{$ctrl.title}}</h1>
+    <h1>{{title}}</h1>
     <table class="table">
-            <thead>
-                <tr>
-                    <th>Order Id</th>
-                    <th>Customer Name</th>
-                    <th>Total Items</th>
-                    <th>Total Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-ng-repeat="order in $ctrl.orders">
-                    <td><a data-ng-href="#/orders/{{order.id}}">{{order.id}}</a></td>
-                    <td>{{order.customerName}}</td>
-                    <td>{{order.totalItems}}</td>
-                    <td>{{order.totalSale | currency}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Customer Name</th>
+                <th>Total Items</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td>
+                    <a href="#/orders/{{order.id}}">{{order.id}}</a>
+                </td>
+                <td>{{order.customerName}}</td>
+                <td>{{order.totalItems}}</td>
+                <td>{{order.totalSale | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
