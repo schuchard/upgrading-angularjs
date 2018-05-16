@@ -1,8 +1,8 @@
 // Karma configuration
 // Generated on Wed May 16 2018 11:14:41 GMT-0600 (MDT)
 
-const webpackConfig = require('./webpack-configs/webpack.common');
-const testPattern = 'webpack.tests.js';
+const webpackConfig = require('./webpack.config')({ env: 'dev' });
+const testPattern = 'webpack.test.js';
 
 module.exports = function(config) {
   config.set({
@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [testPattern],
 
     // list of files / patterns to exclude
-    exclude: ['node_modules/**/*.spec.js'],
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -26,6 +26,7 @@ module.exports = function(config) {
     },
 
     webpack: {
+      mode: 'development',
       resolve: webpackConfig.resolve,
       module: webpackConfig.module,
     },

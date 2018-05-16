@@ -1,7 +1,8 @@
 module.exports = {
+  mode: 'development',
   devtool: 'source-map',
   devServer: {
-    contentBase: './',
+    contentBase: './src',
     port: 9000,
     proxy: {
       '/api': 'localhost:9001',

@@ -3,9 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
   entry: {
-    app: './app.ts',
+    app: './src/app.ts',
   },
   output: {
     path: path.resolve(__dirname, '../../', 'dist'),
@@ -33,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './src/index.html',
     }),
   ],
   optimization: {
