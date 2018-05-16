@@ -28,8 +28,10 @@ import { ProductsComponent } from './products/products';
 import { ProductDetailComponent } from './productDetail/productDetail';
 import { ValidateDateDirective } from './directives/validateDate';
 
+export const MODULE_NAME = 'app';
+
 angular
-  .module('app', ['ngRoute'])
+  .module(MODULE_NAME, ['ngRoute'])
   .config(HashPrefixConfig)
   .config(RouteProvider)
   .service('customerService', CustomerService)
