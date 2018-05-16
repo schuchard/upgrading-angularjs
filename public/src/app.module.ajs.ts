@@ -16,7 +16,6 @@ import { ProductService } from './products/productService';
 import { AuthenticationService } from './shared/authenticationService';
 import { OrderService } from './orders/orderService';
 
-import { HomeComponent } from './home/home';
 import { CustomersComponent } from './customers/customers';
 import { CustomerDetailComponent } from './customerDetail/customerDetail';
 import { NavigationComponent } from './navigation/navigation';
@@ -39,7 +38,6 @@ angular
   .service('productService', ProductService)
   .service('authenticationService', AuthenticationService)
   .service('orderService', OrderService)
-  .component('home', HomeComponent)
   .component('customers', CustomersComponent)
   .component('customerDetail', CustomerDetailComponent)
   .component('navigation', NavigationComponent)
