@@ -10,14 +10,16 @@ import { HomeComponent } from './home/home.component';
 import { CustomerService } from './customers/customer.service';
 import { OrderService } from './orders/orderService';
 import { AddressService } from './shared/addressService';
+import { CustomersTableComponent } from './customers/customers-table.component';
+import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   imports: [BrowserModule, UpgradeModule, HttpModule],
-  declarations: [HomeComponent],
   providers: [CustomerService, OrderService, AddressService],
   bootstrap: [],
+  declarations: [HomeComponent, CustomersTableComponent, CustomersComponent],
   // all downgraded components must be added to entry components
-  entryComponents: [HomeComponent],
+  entryComponents: [HomeComponent, CustomersTableComponent, CustomersComponent],
 })
 export class AppModule {
   constructor(private upgrade: UpgradeModule) {}

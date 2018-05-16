@@ -11,12 +11,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="customer in $ctrl.customers">
-            <td><a data-ng-href="#/customers/{{customer.id}}">{{customer.fullName}}</td>
+        <tr *ngFor="let customer of customers">
+            <td><a href="#/customers/{{customer.id}}">{{customer.fullName}}</a></td>
             <td>{{customer.address1}}</td>
             <td>{{customer.address2}}</td>
             <td>{{customer.city}}</td>
-           <td>{{customer.state}}</td>
+            <td>{{customer.state}}</td>
             <td>{{customer.zip}}</td>
             <td>{{customer.getsDiscount ? 'Yes':'No'}}</td>
         </tr>

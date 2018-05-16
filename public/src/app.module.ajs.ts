@@ -13,10 +13,8 @@ import { RouteProvider } from './config.routes';
 import { ProductService } from './products/productService';
 import { AuthenticationService } from './shared/authenticationService';
 
-import { CustomersComponent } from './customers/customers';
 import { CustomerDetailComponent } from './customerDetail/customerDetail';
 import { NavigationComponent } from './navigation/navigation';
-import { CustomersTableComponent } from './customers/customers-table';
 import { DiscountComponent } from './customerDetail/discount';
 import { OrdersComponent } from './orders/orders';
 import { OrderDetailComponent } from './orderDetail/orderDetail';
@@ -32,10 +30,8 @@ angular
   .config(RouteProvider)
   .service('productService', ProductService)
   .service('authenticationService', AuthenticationService)
-  .component('customers', CustomersComponent)
   .component('customerDetail', CustomerDetailComponent)
   .component('navigation', NavigationComponent)
-  .component('customersTable', CustomersTableComponent)
   .component('discount', DiscountComponent)
   .component('orders', OrdersComponent)
   .component('orderDetail', OrderDetailComponent)
