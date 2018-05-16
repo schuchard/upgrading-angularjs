@@ -7,4 +7,7 @@ module.exports = {
       '/api': 'localhost:9001',
     },
   },
+  module: {
+    rules: [{ test: /\.css?$/, use: ['style-loader', 'css-loader'] }],
+  },
 };

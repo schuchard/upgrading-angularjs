@@ -8,5 +8,5 @@ module.exports = (env) => {
 
   // console.log('envConfig ->', JSON.stringify(envConfig, null,2));
 
-  return webpackMerge(commonConfig, envConfig);
+  return webpackMerge.smart(commonConfig, envConfig);
 };
