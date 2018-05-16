@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/angular": "^1.6.45",
     "@types/node": "^10.0.10",
+    "autoprefixer": "^8.5.0",
     "css-loader": "^0.28.11",
     "del-cli": "^1.1.0",
     "file-loader": "^1.1.11",
@@ -32,6 +33,7 @@
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.1",
+    "postcss-loader": "^2.1.5",
     "raw-loader": "^0.5.1",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
