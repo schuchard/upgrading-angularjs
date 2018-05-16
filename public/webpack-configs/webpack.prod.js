@@ -1,5 +1,6 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   output: {
@@ -15,6 +16,10 @@ module.exports = {
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
     }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true
+    })
   ],
   module: {
     rules: [
